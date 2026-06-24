@@ -1,11 +1,9 @@
 :root {
-    /* Light Mode Variables - تم تعديلها لتكون أكثر فخامة وشفافية */
     --bg-color: #f0f4f8;
     --text-main: #102a43;
     --text-muted: #486581;
-    
-    /* دي التعديلات الجديدة عشان الوضع النهاري يبقى "جلاسي" زي الليلي */
-    --glass-bg: rgba(255, 255, 255, 0.25); /* قللنا الشفافية عشان الـ Blur يبان */
+    /* تم التعديل هنا لزيادة تأثير الزجاج في الوضع النهاري */
+    --glass-bg: rgba(255, 255, 255, 0.25); 
     --glass-border: rgba(255, 255, 255, 0.3);
     --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     
@@ -122,6 +120,8 @@ body {
     font-size: 1.1rem;
     outline: none;
     transition: var(--transition);
+    /* السطر المسؤول عن حل مشكلة الطفح في الموبايل */
+    box-sizing: border-box; 
 }
 
 .search-input:focus {
@@ -135,6 +135,14 @@ body {
 
 [data-theme="light"] .search-input:focus {
     background: #ffffff;
+}
+
+/* تظبيط حجم شريط البحث في شاشات الموبايل */
+@media (max-width: 600px) {
+    .search-input {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+    }
 }
 
 .tabs {
